@@ -10,7 +10,7 @@ import { ThemeService } from '../../services/theme.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
-  isDarkMode = false;
+  isDarkMode = true;
 
   constructor(private themeService: ThemeService) {}
 
