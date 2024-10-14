@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <div>
+            <p>Hello! I'm <span class="highlight">Swapnil Bagul</span>, a passionate senior <span
+                    class="highlight">Full-Stack Engineer</span> with a keen interest in front-end development. With
+                <span id="experience-years" class="highlight"> 7+ years</span> of experience, I've had the opportunity
+                to work on diverse projects,domains (<span class="highlight">Banking,Manufacturing,Finance</span>) and technologies.</p>
+                <div style="margin-left: 50px;margin-top: 20px;">
+                <ul *ngFor="let work of keyWork">
+                    <li>
+                        <div style="display: flex; align-items: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; flex-shrink: 0;">
+                                <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>    
+                            </svg>
+                            {{work}}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="display: flex;width: 100%;">
+            <div style="margin:5%;width: 20%;margin-top: 40px;">
+            <img src="https://aster.cloud/wp-content/uploads/2022/11/compiling-code.gif" 
+            alt="photo"/> 
+            </div>
+            <div class="tech-stack">
+                <h3>Technologies I Work With:</h3>
+                <div class="tech-cards">
+                    <div class="tech-card" *ngFor="let skill of techSkills">
+                        <img [src]="skill.icon" [alt]="skill.name">
+                    </div>
+                </div>
+            </div>
+            <div style="width: 5%"></div>
+            <div class="tech-stack">
+                <h3>Tools I Use:</h3>
+                <div class="tech-cards">
+                    <div class="tech-card" *ngFor="let tool of techTools">
+                        <img *ngIf="!tool.isSvg" [src]="tool.icon" [alt]="tool.name">
+                        <svg *ngIf="tool.isSvg" xmlns="http://www.w3.org/2000/svg" width="80" height="80"
+                            viewBox="0 0 24 24" fill="white">
+                            <path [attr.d]="tool.icon"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

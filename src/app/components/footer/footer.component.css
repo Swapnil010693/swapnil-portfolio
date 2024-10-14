@@ -1,0 +1,26 @@
+.footer {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    padding: 20px 0;
+    font-family: 'Arial', sans-serif;
+    margin-top: 120px;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 0;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+}

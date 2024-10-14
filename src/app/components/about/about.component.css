@@ -1,0 +1,136 @@
+.container {
+    margin: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    word-spacing: 3px;
+    font-weight: 300;
+    color: rgb(170, 169, 169);
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        margin: 30px;
+        word-spacing: 4px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        margin: 40px;
+        word-spacing: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 10px;
+        word-spacing: 2px;
+        font-size: 14px;
+    }
+}
+h2 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 40%;
+  right: 0;
+  bottom: -10px;
+  width: 0;
+  height: 3px;
+  transition: width 0.3s ease;
+}
+
+h2:hover::after {
+  width: 20%;
+  background-color: orangered;
+  }
+
+.about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.tech-stack h3 {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 400;
+    background: linear-gradient(45deg, #ebfc03, #44bdf5, #2af003);
+    background-size: 160% 150%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.tech-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.highlight{
+    color: aqua;
+}
+
+.tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(27, 21, 21);
+    border-radius: 8px;
+    box-shadow: 0 2px 3px greenyellow;
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+}
+
+.tech-card img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0.5rem;
+}
+
+.tech-card span {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+    }
+
+    .about-text, .tech-stack {
+        flex: 1;
+    }
+}

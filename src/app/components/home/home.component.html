@@ -1,0 +1,23 @@
+<div class="slider-thumb">
+<div class="profile-image">
+    <img src="../../../assets/1687008933363.jfif">
+</div>
+<h2 class="text-center"> HEY THERE,</h2>
+<h1 class="text-center name">I'm Swapnil Bagul</h1>
+<p class="intro-heading" style="color:aqua">Transforming Ideas into Elegant Code. Welcome to my corner of the internet. I'm glad you're here!</p>
+<div>
+<div *ngIf="isDarkMode" class="social-icons" >
+    <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
+          <path [attr.d]="link.icon"></path>
+        </svg>
+      </a>
+</div>
+<div *ngIf="!isDarkMode" class="social-icons" >
+    <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="black">
+          <path [attr.d]="link.icon"></path>
+        </svg>
+      </a>
+</div>
+</div>

@@ -1,0 +1,35 @@
+/* Header styles */
+header {
+  @apply bg-white dark:bg-gray-800 shadow-md;
+}
+
+nav {
+  @apply container  px-12 py-3 flex ;
+}
+
+.nav-content {
+  @apply flex items-center justify-between;
+}
+
+.logo {
+  @apply text-xl font-semibold text-gray-700 dark:text-white;
+}
+
+.logo a {
+  @apply hover:text-blue-500 transition-colors duration-300;
+}
+
+.nav-links {
+  @apply flex items-center space-x-4;
+
+}
+
+.nav-link {
+  @apply text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300;
+}
+
+
+
+.theme-toggle {
+  @apply text-gray-600 dark:text-gray-300 text-xl cursor-pointer;
+}

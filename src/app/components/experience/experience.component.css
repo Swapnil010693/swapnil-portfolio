@@ -1,0 +1,173 @@
+:root {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #ffd700;
+  --secondary-color: #4a4a4a;
+  --highlight-color: #2a2a2a;
+}
+
+.experience-container {
+  display: flex;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Alexandria, sans-serif;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.exp-title{
+  margin-top: 160px;
+}
+
+.company-list {
+  flex: 0 0 100px;
+  margin-right: 0px;
+  margin-left: 40px;
+  margin-top: 100px;
+  border-radius: 20px;
+}
+
+.company-item {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.company-item:hover, .company-item.active {
+  border-left-color: red;
+  color: orangered;
+}
+
+.job-details {
+  margin: 40px;
+  padding: 40px;
+  flex: 1;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.job-title {
+  font-size: 28px;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #ebfc03, #44bdf5, #2af003);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.job-company {
+  font-size: 18px;
+  color: var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.experience-header {
+  font-size: 75px;
+  background: linear-gradient(45deg,red,rgb(131, 3, 250),yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  flex: 1;
+  
+}
+
+.job-period {
+  font-size: 16px;
+  color: grey;
+  margin-bottom: 20px;
+}
+
+.job-responsibilities {
+  font-weight: 100;
+  list-style-type: none;
+  padding: 0;
+animation: slideIn 0.5s ease-out;
+opacity: 0;
+transform: translateX(-40px);
+animation: fadeInSlide 0.5s ease-out forwards;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.job-responsibilities li {
+  opacity: 0;
+  animation: fadeInSlide 0.5s ease-out forwards;
+}
+
+.job-responsibilities li:nth-child(1) { animation-delay: 0.1s; }
+.job-responsibilities li:nth-child(2) { animation-delay: 0.2s; }
+.job-responsibilities li:nth-child(3) { animation-delay: 0.3s; }
+.job-responsibilities li:nth-child(4) { animation-delay: 0.4s; }
+.job-responsibilities li:nth-child(5) { animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.job-responsibilities li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.job-responsibilities li::before {
+  content: '»';
+  font-size: 25px;
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .experience-container {
+    flex-direction: column;
+  }
+
+  .company-list {
+    flex: none;
+    margin-right: 0;
+    margin-bottom: 20px;
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .company-item {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+}

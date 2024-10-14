@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light theme (default) */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --dot-count: 50;
+
+  /* Add other color variables as needed */
+}
+p{
+    font-family: 'Open Sans';
+}
+
+/* Dark theme */
+.dark {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  /* Add other color variables as needed */
+}
+
+/* Apply theme colors to elements */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Add more global styles using CSS variables */
+
+/* Moving dot animation for background */
+@keyframes moveDots {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 10px);
+  }
+  50% {
+    transform: translate(0, 20px);
+  }
+  75% {
+    transform: translate(-10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.background-dots {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  animation: moveDots 8s infinite ease-in-out;
+}
+
+.dot-container::before {
+    content: '';
+    position: absolute;
+    left: calc(100vw * (var(--i) - 1) / var(--dot-count));
+    /* Other dot positioning and styles */
+  }
+
+
+  p{
+    font-family: Alexandria;
+  }
+
+/* Generate 50 dots with random positions and delays */
+
+
+/* Adjust dot color for dark theme */
+.dark .dot {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+

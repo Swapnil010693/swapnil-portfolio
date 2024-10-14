@@ -1,0 +1,23 @@
+<div class="experience-container">
+    <div class="experience-header fw-lighter display-1 m-4">
+        <h1 class="exp-title"> My Experience</h1>
+    </div>
+    <div class="company-list">
+      <div *ngFor="let company of companies" 
+           class="company-item" 
+           [class.active]="company === selectedCompany"
+           (click)="selectCompany(company)">
+        {{company}}
+      </div>
+    </div>
+    <div class="job-details">
+      <h2 class="job-title">{{selectedJob.title}}</h2>
+      <div class="job-company">{{selectedJob.company}}</div>
+      <div class="job-period">{{selectedJob.period}}</div>
+      <ul class="job-responsibilities">
+        <li *ngFor="let responsibility of selectedJob.responsibilities">
+          {{responsibility}}
+        </li>
+      </ul>
+    </div>
+  </div>
