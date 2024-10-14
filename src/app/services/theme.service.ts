@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ThemeService {
-  private isDarkMode = new BehaviorSubject<boolean>(false);
+  private isDarkMode = new BehaviorSubject<boolean>(true);
 
   constructor() {
     // Load the theme preference from localStorage on initialization
